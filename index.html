@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
   </head>
   <body>
     <header class="container mx-auto w-10/12 mt-15">
@@ -14,19 +16,310 @@
         <div class="grid grid-cols-3">
             <div class="p-5 shadow-md mx-2">
                 <p class="text-sm">Total</p>
-            <p class="font-bold">8</p>
+            <p id="total" class="font-bold">8</p>
         </div>
             <div class="p-5 shadow-md mx-2">
-                <p class="text-sm">Total</p>
-            <p class="font-bold">0</p>
+                <p class="text-sm">Interview</p>
+            <p id="interview" class="font-bold">0</p>
         </div>
             <div class="p-5 shadow-md mx-2">
-                <p class="text-sm">Total</p>
-            <p class="font-bold">0</p>
+                <p class="text-sm">Rejected</p>
+            <p id="rejected" class="font-bold">0</p>
         </div>
         
             
         </div>
     </header>
+
+    <hr class="my-8">
+
+    <main class="w-[80%] mx-auto">
+        <div class="mb-5">
+            <button class="bg-blue-400 text-white px-5 py-2 shadow-sm" id="all-filter-btn">All</button>
+            <button class="px-5 py-2 shadow-sm" id="interview-filter-btn">Interview</button>
+            <button class="px-5 py-2 shadow-sm" id="rejected-filter-btn">Rejected</button>
+        </div>
+
+
+        <section id="allcards" class="space-y-3">
+            <!-- card 1 -->
+             <div class="card flex justify-between shadow-xl p-8">
+                <!-- main part 1 -->
+                <div class="space-y-3">
+                    <!-- part-1 -->
+                    <div>
+                        <p class="companyName">Mobile First Corp</p>
+                        <p class="job-title">React Native Developer</p>
+                    </div>
+                    <!-- part-2-->
+                     <div>
+                        <p class="">Remote • Full-time • $130,000 - $175,000</p>
+                     </div>
+
+                     <!-- part-3 -->
+                      <div>
+                        <button class=" bg-gray-200 font-semibold rounded-xl px-3 py-2">NOT APPLIED</button>
+                        <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                      </div>
+                      <!-- part-4 -->
+                       <div class="flex gap-2">
+                        <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+                        <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+                       </div>
+                </div>
+                <!-- main part 2 -->
+                <div>
+                    <button>delete</button>
+                </div>    
+             </div>
+
+
+
+
+             <!-- card 2 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">CloudScale Labs</p>
+            <p class="job-title">Backend Python Developer</p>
+        </div>
+        <div>
+            <p>Helsinki • Full-time • €70,000 - €90,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">APPLIED</button>
+            <p>Develop scalable APIs and data pipelines using Python and FastAPI.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 3 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">Nordic Data Oy</p>
+            <p class="job-title">Data Analyst</p>
+        </div>
+        <div>
+            <p>Oulu • Hybrid • €60,000 - €75,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">NOT APPLIED</button>
+            <p>Analyze business data and create dashboards using SQL and Power BI.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 4 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">GreenByte Systems</p>
+            <p class="job-title">Frontend Developer</p>
+        </div>
+        <div>
+            <p>Stockholm • Full-time • €65,000 - €85,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">INTERVIEW</button>
+            <p>Build responsive web apps using React, Tailwind and TypeScript.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 5 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">AI Horizon Ltd</p>
+            <p class="job-title">Machine Learning Engineer</p>
+        </div>
+        <div>
+            <p>Remote • Full-time • €90,000 - €120,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">REJECTED</button>
+            <p>Train and deploy ML models for recommendation systems.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 6 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">FinEdge Tech</p>
+            <p class="job-title">DevOps Engineer</p>
+        </div>
+        <div>
+            <p>Berlin • Full-time • €75,000 - €95,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">APPLIED</button>
+            <p>Manage CI/CD pipelines and cloud infrastructure on AWS.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 7 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">BlueOcean Digital</p>
+            <p class="job-title">UI/UX Designer</p>
+        </div>
+        <div>
+            <p>Remote • Contract • €45/hr</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">NOT APPLIED</button>
+            <p>Design intuitive interfaces and improve user experience flows.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 8 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">QuantumSoft</p>
+            <p class="job-title">Full Stack Developer</p>
+        </div>
+        <div>
+            <p>Amsterdam • Hybrid • €80,000 - €100,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">APPLIED</button>
+            <p>Work on Node.js backend and React frontend applications.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 9 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">Arctic Analytics</p>
+            <p class="job-title">Business Intelligence Developer</p>
+        </div>
+        <div>
+            <p>Oulu • Full-time • €65,000 - €80,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">INTERVIEW</button>
+            <p>Create dashboards and reports for executive decision making.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 10 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">CyberNest Security</p>
+            <p class="job-title">Cybersecurity Analyst</p>
+        </div>
+        <div>
+            <p>London • Full-time • £70,000 - £95,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">NOT APPLIED</button>
+            <p>Monitor threats and secure enterprise infrastructure.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 11 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">SkyBridge AI</p>
+            <p class="job-title">AI Automation Engineer</p>
+        </div>
+        <div>
+            <p>Remote • Full-time • €95,000 - €130,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">APPLIED</button>
+            <p>Build AI-driven automation systems for enterprise workflows.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+
+<!-- card 12 -->
+<div class="card flex justify-between shadow-xl p-8">
+    <div class="space-y-3">
+        <div>
+            <p class="companyName">DataForge Solutions</p>
+            <p class="job-title">Junior Data Engineer</p>
+        </div>
+        <div>
+            <p>Prague • Full-time • €50,000 - €65,000</p>
+        </div>
+        <div>
+            <button class="bg-gray-200 font-semibold rounded-xl px-3 py-2">NOT APPLIED</button>
+            <p>Assist in building ETL pipelines and maintaining data warehouses.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="interview-btn text-green-500 font-semibold border-2 border-green-500 hover:bg-green-100 rounded-md px-3 py-2">INTERVIEW</button>
+            <button class="rejected-btn text-red-500 font-semibold border-2 border-red-500 hover:bg-red-100 rounded-md px-3 py-2">REJECTED</button>
+        </div>
+    </div>
+    <div><button>delete</button></div>
+</div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
