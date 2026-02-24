@@ -12,7 +12,7 @@ const mainContainer  = document.querySelector('main');
 const allFilterBtn       = document.getElementById('all-filter-btn');
 const interviewFilterBtn = document.getElementById('interview-filter-btn');
 const rejectedFilterBtn  = document.getElementById('rejected-filter-btn');
-
+// track active
 let activeTab = 'all';
 
 // ─── CALCULATE & UPDATE COUNTS ─
