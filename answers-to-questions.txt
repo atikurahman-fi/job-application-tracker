@@ -1,0 +1,35 @@
+
+1. Difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll
+* getElementById → one element, by id, fast and simple
+* getElementsByClassName → many elements, live collection
+* querySelector → first match, very flexible
+* querySelectorAll → all matches, flexible, static list
+
+2. How do you create and insert a new element into the DOM?
+1. Create it
+   const div = document.createElement("div");
+2. Add content or attributes
+   div.textContent = "Hello world";
+   div.classList.add("box");
+3. Insert it somewhere
+   document.body.appendChild(div);
+3. What is Event Bubbling? How does it work?
+
+Event bubbling means when an event happens on a child element, it first runs on that element, then “bubbles up” to its parent, then the parent’s parent, and so on up to document.
+button → div → body → document
+
+
+4. What is Event Delegation? Why is it useful?
+Event delegation is when you attach one event listener to a parent element and handle events for its children using bubbling.
+Instead of adding a click listener to 100 list items, you add one listener to the ul, and inside the handler you check which child was clicked using event.target.
+
+5. Difference between preventDefault() and stopPropagation()
+
+preventDefault()
+Stops the browser’s default behavior.
+
+Ex-- Prevent a form from submitting
+
+stopPropagation()
+Stops the event from moving up (or down) the DOM tree.
+It prevents parent elements from receiving the event.
